@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const index = require('./view/index.html');
 // const jwt = require('express-jwt');
 // const jwksRsa = require('jwks-rsa');
 
@@ -21,9 +22,9 @@ app.use(morgan('combined'));
 
 const HTTP_PORT = config.httpPort;
 
-/*app.get('/', async (req, res) => {
-  res.send('HI');
-});*/
+app.get('/', async (req, res) => {
+  res.send(index);
+});
 app.get('/all', async (req, res) => {
   let t = await getAll();
   //t = [{name: 'Alex'}, {name: 'John'}];
