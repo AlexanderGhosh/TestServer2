@@ -16,7 +16,7 @@ const debug = {
 };
 
 const release = {
-  httpPort: 4000,
+  httpPort: process.env.PORT || 5000,
   httpsPort: 4001
 };
 
